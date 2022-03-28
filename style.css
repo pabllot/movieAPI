@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(1, 1, 61);
+  --secondary-color: rgb(14, 14, 14);
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(1, 1, 61);
+  width: 100%;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  font-family: inherit;
+}
+
+.search:focus {
+  outline: 0;
+  background-color: var(--primary-color);
+}
+
+.search::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px yellow;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: rgb(96, 209, 96);
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(14, 14, 14);
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+  opacity: 0.95;
+  color: aliceblue;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+button {
+  background-color: rgba(14, 29, 165, 0.979);
+  width: 4rem;
+  height: 2rem;
+  border-radius: 25px;
+  outline: none;
+  color: rgb(255, 255, 255);
+  margin-left: 6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  button {
+    margin-left: 0;
+  }
+
+  #search {
+    width: 7rem;
+    justify-content: center;
+  }
+}
